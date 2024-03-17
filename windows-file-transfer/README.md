@@ -89,7 +89,7 @@ USING CERTUTIL -
 
     certutil.exe -encode c:demo.txt out.b64 & more .\out.b64
 
-**decode with this command / or use online base64 decoder**
+decode with this command or use online base64 decoder
 
     echo "base64_value==" | base64 -d > demo.txt
 
