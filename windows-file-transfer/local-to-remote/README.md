@@ -125,7 +125,7 @@ USING SMB -
 USING SSH - 
 ------------------------------------------------------------------------------------------------------------------
 
-SCP-
+**SCP-**
 
 **Web Content Download**
     
@@ -135,7 +135,7 @@ SCP-
 
     scp demo.txt root@10.10.10.10:/root/
 
-RSYNC-
+**RSYNC-**
 
 **Web Content Download**
     
