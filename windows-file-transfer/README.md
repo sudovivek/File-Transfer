@@ -176,6 +176,6 @@ USING NC / NETCAT -
 
 **Then start server with input redirection from file**
     
-    nc -v 10.10.10.10 443 < demo.txt
+    nc.exe -v 10.10.10.10 443 < demo.txt
 ------------------------------------------------------------------------------------------------------------------
  
