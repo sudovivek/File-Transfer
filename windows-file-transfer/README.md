@@ -117,4 +117,22 @@ RSYNC-
 
     rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 ------------------------------------------------------------------------------------------------------------------
+USING WinRM - 
+------------------------------------------------------------------------------------------------------------------
+
+**Web Content Download**
+    
+    download demo.txt
+------------------------------------------------------------------------------------------------------------------
+USING BITSADMIN - 
+------------------------------------------------------------------------------------------------------------------
+
+**Web Content Download**
+    
+    bitsadmin /transfer n http://10.10.10.10/demo.txt C:\temp\demo.txt
+
+    bitsadmin /transfer evil /download /priority high http://10.10.10.10:80/demo.txt c:\temp\demo.txt
+
+    powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://10.10.10.10/demo.txt" -Destination "C:\temp\demo.txt"
+------------------------------------------------------------------------------------------------------------------
 
