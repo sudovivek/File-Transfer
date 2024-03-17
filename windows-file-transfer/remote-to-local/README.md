@@ -57,7 +57,7 @@ USING SMB -
 USING SSH - 
 ------------------------------------------------------------------------------------------------------------------
 
-SCP-
+**SCP-**
 
 **Web Content Upload**
     
@@ -75,7 +75,7 @@ SCP-
 
     scp -i /home/user/.ssh/id_rsa -vr root@10.10.10.10: /tmp/demo/ 
 
-RSYNC-
+**RSYNC-**
 
 **Web Content Upload**
     
