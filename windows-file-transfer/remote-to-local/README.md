@@ -61,25 +61,33 @@ SCP-
 
 **Web Content Upload**
     
-    scp /tmp/demo.txt user@10.10.10.10:/tmp/
+    scp user@10.10.10.10:/tmp/demo.txt /tmp/
 
-**Web Content Upload**
+**Wildcard**
 
-    scp demo.txt root@10.10.10.10:/root/
+    scp -vr root@10.10.10.10:/root/*.zip /tmp/demo/ 
+
+**Custom Port**
+
+    scp P 2222 -vr root@10.10.10.10:/root/*.zip /tmp/demo/ 
+
+**SSH Key**
+
+    scp -i /home/user/.ssh/id_rsa -vr root@10.10.10.10: /tmp/demo/ 
 
 RSYNC-
 
 **Web Content Upload**
     
-    rsync -av /tmp/centos/ root@192.168.1.120:/root/*
+    rsync -av root@10.10.10.10:/root/* /tmp/demo/
 
-**Web Content Upload**
+**Custom Port**
+
+    rsync -av --port 2222 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
+
+**SSH Key**
 
     rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
-
-**Web Content Upload**
-
-    rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 ------------------------------------------------------------------------------------------------------------------
 USING WinRM - 
 ------------------------------------------------------------------------------------------------------------------
