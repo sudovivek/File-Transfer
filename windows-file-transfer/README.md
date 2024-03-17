@@ -110,7 +110,7 @@ USING SMB -
 
 **SMB CLIENT -**
 
-**Web Content Download**
+**To create authenticated session**
     
     net use \\10.10.10.10 /u:"user" "123"
 
