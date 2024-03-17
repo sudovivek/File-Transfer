@@ -56,8 +56,7 @@ USING POWERSHELL -
     echo '$webclient.DownloadFile($url, $file)' >> wget.ps1
 
     powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile -File wget.ps1
-------------------------------------------------------------------------------------------------------------------    
-
+------------------------------------------------------------------------------------------------------------------
 
 
 USING CMD - 
