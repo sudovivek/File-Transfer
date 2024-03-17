@@ -218,10 +218,6 @@ Replace "demo.txt" with desired file name
     echo bye>> file.txt
 
     ftp -v -n -s:file.txt
-    
-**One Liner**
-
-    echo open 10.10.10.10 21 > file.txt && echo bin>> file.txt && echo get demo.txt>> file.txt && echo bye>> file.txt && ftp -A -v -n -s:file.txt
 
 **Mannualy -**
 
