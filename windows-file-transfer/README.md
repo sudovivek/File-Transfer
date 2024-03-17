@@ -93,22 +93,22 @@ USING CERTUTIL -
 USING SMB - 
 ------------------------------------------------------------------------------------------------------------------
 
-SMB SERVER -
+**SMB SERVER -**
 
-**Start SMB Server**
+**Start normal SMB Server**
     
     impacket-smbserver share .
 
-**Start SMB Server**
+**If version error**
     
     impacket-smbserver -smb2support share .
 
-**Start SMB Server**
+**Use authenticated servers if file transfer is long**
 
     impacket-smbserver share -username user -password 123 . -smb2support
 
 
-SMB CLIENT -
+**SMB CLIENT -**
 
 **Web Content Download**
     
