@@ -90,5 +90,31 @@ USING CERTUTIL -
     certutil.exe -encode c:1.txt out.b64 & more .\out.b64
 
 ------------------------------------------------------------------------------------------------------------------
+USING SSH - 
+------------------------------------------------------------------------------------------------------------------
 
+SCP-
+
+**Web Content Download**
+    
+    scp /tmp/demo.txt user@10.10.10.10:/tmp/
+
+**Web Content Download**
+
+    scp demo.txt root@10.10.10.10:/root/
+
+RSYNC-
+
+**Web Content Download**
+    
+    rsync -av /tmp/centos/ root@192.168.1.120:/root/*
+
+**Web Content Download**
+
+    rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
+
+**Web Content Download**
+
+    rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
+------------------------------------------------------------------------------------------------------------------
 
