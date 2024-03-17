@@ -149,6 +149,25 @@ Replace "demo.txt" with desired file name
     ftp
     open 10.10.10.10 2121
     put demo.txt
+
+**FTP Authenticated**
+
+Replace "demo.txt" with desired file name
+    
+    echo open 10.10.10.10 21 > file.txt
+    echo user test>> file.txt
+    echo test>> file.txt
+    echo bin>> file.txt
+    echo put demo.txt>> file.txt
+    echo bye>> file.txt
+
+    ftp -v -n -s:file.txt
+
+**Mannualy -**
+
+    ftp
+    open 10.10.10.10 2121
+    put demo.txt
 ------------------------------------------------------------------------------------------------------------------
 
  
