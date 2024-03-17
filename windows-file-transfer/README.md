@@ -170,11 +170,12 @@ USING BITSADMIN -
 USING NC / NETCAT - 
 ------------------------------------------------------------------------------------------------------------------
 
-**Web Content Download**
+**First, start listener on client with output redirection to file**
     
     nc.exe -nlvp 443 > demo.txt
 
-**Web Content Download**
+**Then start server with input redirection from file**
     
     nc -v 10.10.10.10 443 < demo.txt
 ------------------------------------------------------------------------------------------------------------------
+ 
