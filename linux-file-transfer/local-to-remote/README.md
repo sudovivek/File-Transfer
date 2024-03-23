@@ -1,15 +1,15 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**Download file**
+**Download file from local to remote**
     
     wget http://10.10.10.10/demo.txt
 
-**Output save to another location**
+**Download file and save to local location**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
 
-**If HTTPS Transfer**
+**Download file over HTTPS with certificate validation disabled**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 ------------------------------------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@ USING WGET -
 USING CURL -
 ------------------------------------------------------------------------------------------------------------------
 
-**Output show on screen**
+**Download file and display output**
     
     curl -v http://10.10.10.10/demo.txt
 
@@ -27,7 +27,7 @@ USING CURL -
     
     curl -v http://10.10.10.10/demo.txt -o demo.txt
 
-**-k to ingnore certificate**
+**Download file over HTTPS with certificate validation disabled**
     
     curl -v https://10.10.10.10/demo.txt -o demo.txt -k
 ------------------------------------------------------------------------------------------------------------------
@@ -37,11 +37,11 @@ USING CURL -
 NC / Ncat -
 ------------------------------------------------------------------------------------------------------------------
 
-**run on remote pc**
+**Run listener on remote PC**
     
     nc64.exe -nlvp 443 > demo.txt
 
-**run on local pc**
+**Run client on local PC**
     
     nc -v 10.10.10.10 443 < demo.txt
 ------------------------------------------------------------------------------------------------------------------
@@ -51,11 +51,11 @@ NC / Ncat -
 SOCAT -
 ------------------------------------------------------------------------------------------------------------------
 
-**run on local pc**
+**Run listener on remote PC**
     
     socat TCP4-LISTEN:443,fork file:demo.txt
 
-**run on remote pc**
+**Run client on local PC**
     
     socat TCP4:10.10.10.10:443 file:demo.txt,create
 ------------------------------------------------------------------------------------------------------------------
@@ -65,13 +65,13 @@ SOCAT -
 PHP -
 ------------------------------------------------------------------------------------------------------------------
 
-**run on local pc**
+**Run HTTP server on local PC**
     
     python -m http.server 80
 
     php -S 0.0.0.0:80
 
-**run on remote pc**
+**Run PHP script on remote PC**
     
     echo "<?php file_put_contents('output.txt', fopen('http://10.10.10.10/demo.txt', 'r')); ?>" > demo.php && php demo.php
 
@@ -85,28 +85,28 @@ USING SSH -
 
 **SCP-**
 
-**To Copy File**
+**Copy file from local to remote**
     
     scp /tmp/demo.txt user@10.10.10.10:/tmp/
 
-**To Copy File**
+**Copy file from local to remote**
 
     scp demo.txt root@10.10.10.10:/root/
 
-**To Copy Directory**
+**Copy directory from local to remote**
 
     scp -r /tmp/demo/ user@10.10.10.10:/tmp/
 
 **RSYNC-**
 
-**Web Content Download**
+**Download web content to remote directory**
     
     rsync -av /tmp/demo/ root@10.10.10.10:/root/*
 
-**Web Content Download**
+**Download web content to remote directory**
 
     rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 
-**Web Content Download**
+**Download web content to remote directory**
 
     rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
