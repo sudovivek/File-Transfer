@@ -148,7 +148,7 @@ USING SSH -
 
 **Web Content Download**
     
-    rsync -av /tmp/centos/ root@192.168.1.120:/root/*
+    rsync -av /tmp/demo/ root@192.168.1.120:/root/*
 
 **Web Content Download**
 
