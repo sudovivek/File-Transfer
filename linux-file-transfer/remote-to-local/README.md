@@ -85,28 +85,28 @@ USING SSH -
 
 **SCP-**
 
-**Copy file from local to remote**
+**Copy file from remote to local**
     
     scp /tmp/demo.txt user@10.10.10.10:/tmp/
 
-**Copy file from local to remote**
+**Copy file from remote to local**
 
     scp demo.txt root@10.10.10.10:/root/
 
-**Copy directory from local to remote**
+**Copy directory from remote to local**
 
     scp -r /tmp/demo/ user@10.10.10.10:/tmp/
 
 **RSYNC-**
 
-**Download web content to remote directory**
+**Download web content to local directory**
     
     rsync -av /tmp/demo/ root@10.10.10.10:/root/*
 
-**Download web content to remote directory**
+**Download web content to local directory**
 
     rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 
-**Download web content to remote directory**
+**Download web content to local directory**
 
     rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
