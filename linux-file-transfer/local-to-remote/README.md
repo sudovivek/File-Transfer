@@ -5,7 +5,7 @@ USING WGET -
 
     python -m http.server 80
 
-**On the remote PC, run the following command after launching a Python server locally**
+**On the Remote PC, run the following command after launching a python server locally**
     
     wget http://10.10.10.10/demo.txt
 
@@ -17,7 +17,7 @@ USING WGET -
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Transfer a file from the local PC to the remote PC, while the Python server is running on the remote PC**
+**Transfer a file from the Local PC to the Remote PC, while the Python server is running on the Remote PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
 
