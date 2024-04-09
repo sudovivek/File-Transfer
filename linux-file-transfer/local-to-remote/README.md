@@ -23,27 +23,27 @@ Commands to start HTTP Server -
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**On the Remote PC, run the following command after launching a HTTP Server locally**
+**1. On the Remote PC, run the following command after launching a HTTP Server locally**
     
     wget http://{LOCAL-IP}/demo.txt
 
-**Utilize the -O flag to specify a different destination for the downloaded file**
+**2. Utilize the -O flag to specify a different destination for the downloaded file**
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
-**Utilize the -b flag to execute the process in the background**
+**3. Utilize the -b flag to execute the process in the background**
     
     wget -b http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
-**For downloading files over HTTPS with certificate validation disabled, use the following command**
+**4. For downloading files over HTTPS with certificate validation disabled, use the following command**
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Use the -i flag to fetch URLs from a file, where each URL is listed on a separate line**
+**5. Use the -i flag to fetch URLs from a file, where each URL is listed on a separate line**
 
     wget -i urls.txt
     
-**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
+**6. Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
 
     wget -O- --method=PUT --body-file=demo.txt http://{REMOTE-IP}/demo.txt
 
