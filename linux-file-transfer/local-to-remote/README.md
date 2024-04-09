@@ -94,11 +94,11 @@ NC / Ncat -
 SOCAT -
 ------------------------------------------------------------------------------------------------------------------
 
-**Run Socat Server on Remote PC**
+**Run Socat Server on Local PC**
     
     socat TCP4-LISTEN:443,fork file:demo.txt
 
-**Run Socat Client on Local PC**
+**Run Socat Client on Remote PC**
     
     socat TCP4:10.10.10.10:443 file:demo.txt,create
 ------------------------------------------------------------------------------------------------------------------
