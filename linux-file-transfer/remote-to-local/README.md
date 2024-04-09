@@ -1,4 +1,4 @@
-Command to start HTTP Server -
+Commands to start HTTP Server -
 ------------------------------------------------------------------------------------------------------------------
 
 **Python HTTP Server**
