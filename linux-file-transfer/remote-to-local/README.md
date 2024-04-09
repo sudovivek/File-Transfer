@@ -1,3 +1,25 @@
+Command to start HTTP Server -
+------------------------------------------------------------------------------------------------------------------
+
+**Python HTTP Server**
+
+    python2.7 -m SimpleHTTPServer 80
+    python3 -m http.server 80
+
+**PHP HTTP Server**
+
+    php -S localhost:80
+
+**Ruby HTTP Server**
+    
+    ruby -run -e httpd . -p 80
+    
+**BusyBox HTTP Server**
+
+    busybox httpd -p 80
+        
+------------------------------------------------------------------------------------------------------------------
+    
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
@@ -25,6 +47,10 @@ USING WGET -
 **Execute this command on the Remote PC, while the python server is running on the Local PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://{LOCAL-IP}/demo.txt
+
+**Use the -i flag to fetch URLs from a file, where each URL is listed on a separate line**
+
+    wget -i urls.txt
 
 ------------------------------------------------------------------------------------------------------------------
 
