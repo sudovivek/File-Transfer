@@ -81,11 +81,11 @@ USING CURL -
 NC / Ncat -
 ------------------------------------------------------------------------------------------------------------------
 
-**Run NC Server on local PC**
+**Run NC Server on Local PC**
     
     nc -nlvp 443 > demo.txt
 
-**Run NC Client on remote PC**
+**Run NC Client on Remote PC**
     
     nc -v {LOCAL-IP} 443 < demo.txt
 ------------------------------------------------------------------------------------------------------------------
@@ -95,11 +95,11 @@ NC / Ncat -
 SOCAT -
 ------------------------------------------------------------------------------------------------------------------
 
-**Run listener on remote PC**
+**Run Socat Server on Remote PC**
     
     socat TCP4-LISTEN:443,fork file:demo.txt
 
-**Run client on local PC**
+**Run Socat Client on Local PC**
     
     socat TCP4:{REMOTE-IP}:443 file:demo.txt,create
 ------------------------------------------------------------------------------------------------------------------
