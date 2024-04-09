@@ -7,7 +7,7 @@ USING WGET -
 
 **On the Remote PC, run the following command after launching a python server locally**
     
-    wget http://10.10.10.10/demo.txt
+    wget http://{LOCAL-IP}/demo.txt
 
 **Utilize the -O flag to specify a different destination for the downloaded file**
     
