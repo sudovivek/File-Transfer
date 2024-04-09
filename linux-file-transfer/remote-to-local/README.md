@@ -71,7 +71,7 @@ USING CURL -
     
     curl -v https://{REMOTE-IP}/demo.txt -O demo.txt -k
 
-**Execute this command on the Remote PC, while the HTTP Server is running on the Local PC**
+**Execute this command on remote PC, while HTTP server is running on local PC, it uses PUT method so run http server which supports PUT method**
 
     curl -v -X PUT --upload-file demo.txt http://{Local-IP}           
 ------------------------------------------------------------------------------------------------------------------
