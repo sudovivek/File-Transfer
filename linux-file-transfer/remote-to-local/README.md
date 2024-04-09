@@ -7,19 +7,19 @@ USING WGET -
 
 **On the Lcoal PC, run the following command after launching a python server on Remote PC**
     
-    wget http://10.10.10.10/demo.txt
+    wget http://{REMOTE-IP}/demo.txt
 
 **Utilize the -O flag to specify a different destination for the downloaded file**
     
-    wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
+    wget http://{REMOTE-IP}/demo.txt -O /tmp/demo.txt
 
 **For downloading files over HTTPS with certificate validation disabled, use the following command**
     
-    wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
+    wget http://{REMOTE-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
 **Execute this command on the Remote PC, while the python server is running on the Local PC**
 
-    wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
+    wget -O- --method=PUT --body-file=demo.txt http://{LOCAL-IP}/demo.txt
 
 ------------------------------------------------------------------------------------------------------------------
 
