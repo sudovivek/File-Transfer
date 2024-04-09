@@ -13,6 +13,10 @@ USING WGET -
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
+**Utilize the -b flag to execute the process in the background**
+    
+    wget -b http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
+
 **For downloading files over HTTPS with certificate validation disabled, use the following command**
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
