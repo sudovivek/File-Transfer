@@ -140,7 +140,7 @@ USING SSH -
 
     scp -r /tmp/demo/ user@{REMOTE-IP}:/tmp/
     
-**Copy a directory from local to remote with RSA key**
+**Copy a directory from Local to Remote with RSA key**
 
     scp -i id_rsa -r /tmp/demo/ user@{REMOTE-IP}:/tmp/
 
@@ -154,6 +154,6 @@ USING SSH -
 
     rsync -r /tmp/demo/ user@{REMOTE-IP}:/tmp/
 
-**Copy a directory from local to remote with RSA key**
+**Copy a directory from Local to Remote with RSA key**
 
     rsync -av --port 22 -e 'ssh -i id_rsa' -r /tmp/demo/ user@{REMOTE-IP}:/tmp/
