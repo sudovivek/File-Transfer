@@ -54,7 +54,7 @@ USING WGET -
 USING CURL -
 ------------------------------------------------------------------------------------------------------------------
 
-**On the Remote PC, run the following command after launching a HTTP Server locally**
+**To download a file and display its content on the screen**
     
     curl -v http://{LOCAL-IP}/demo.txt
 
