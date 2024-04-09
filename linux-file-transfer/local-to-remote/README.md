@@ -54,23 +54,23 @@ USING WGET -
 USING CURL -
 ------------------------------------------------------------------------------------------------------------------
 
-**To download a file and display its content on the screen**
+**1. To download a file and display its content on the screen**
     
     curl -v http://{LOCAL-IP}/demo.txt
 
-**Utilize the -o flag, to save the output to a file and specify a location**
+**2. Utilize the -o flag, to save the output to a file and specify a location**
     
     curl -v http://{LOCAL-IP}/demo.txt -o demo.txt
 
-**Utilize the -O flag to Write output to a file named as the remote file**
+**3. Utilize the -O flag to Write output to a file named as the remote file**
 
     curl -v -O http://{LOCAL-IP}/demo.txt
 
-**Utilize the -k flag to download file over HTTPS with certificate validation disabled**
+**4. Utilize the -k flag to download file over HTTPS with certificate validation disabled**
     
     curl -v https://{LOCAL-IP}/demo.txt -O demo.txt -k
 
-**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
+**5. Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
 
     curl -v -X PUT --upload-file demo.txt http://{REMOTE-IP}           
 ------------------------------------------------------------------------------------------------------------------
