@@ -11,11 +11,11 @@ USING WGET -
 
 **Utilize the -O flag to specify a different destination for the downloaded file**
     
-    wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
+    wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
 **For downloading files over HTTPS with certificate validation disabled, use the following command**
     
-    wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
+    wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
 **Execute this command on the Local PC, while the Python server is running on the Remote PC**
 
