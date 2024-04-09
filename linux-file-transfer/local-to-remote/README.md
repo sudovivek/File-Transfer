@@ -80,13 +80,13 @@ USING CURL -
 NC / Ncat -
 ------------------------------------------------------------------------------------------------------------------
 
-**Run listener on remote PC**
-    
-    nc -nlvp 443 > demo.txt
-
 **Run client on local PC**
     
-    nc -v {REMOTE-IP} 443 < demo.txt
+    nc -nlvp 443 < demo.txt
+
+**Run listener on remote PC**
+    
+    nc -v {REMOTE-IP} 443 > demo.txt
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
