@@ -44,7 +44,7 @@ USING WGET -
 
     wget -i urls.txt
 
-**Execute this command on remote PC, while HTTP server is running on local PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method  -**  https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py**
+**Execute this command on remote PC, while HTTP server is running on local PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method  -**  https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
 
     wget -O- --method=PUT --body-file=demo.txt http://{LOCAL-IP}/demo.txt
 
