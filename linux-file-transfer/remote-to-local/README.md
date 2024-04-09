@@ -5,7 +5,7 @@ USING WGET -
 
     python -m http.server 80
 
-**On the lcoal PC, run the following command after launching a Python server on Remote PC**
+**On the Lcoal PC, run the following command after launching a python server on Remote PC**
     
     wget http://10.10.10.10/demo.txt
 
@@ -17,7 +17,7 @@ USING WGET -
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Transfer a file from the remote PC to the local PC, while the Python server is running on the local PC**
+**Execute this command on the Remote PC, while the python server is running on the Local PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
 
