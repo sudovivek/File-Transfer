@@ -17,7 +17,7 @@ USING WGET -
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Transfer a file from the Local PC to the Remote PC, while the Python server is running on the Remote PC**
+**Execute this command on the Local PC, while the Python server is running on the Remote PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
 
