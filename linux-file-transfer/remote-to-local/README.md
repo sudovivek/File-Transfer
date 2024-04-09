@@ -65,7 +65,7 @@ USING CURL -
 
 **Utilize the -O flag to Write output to a file named as the remote file**
 
-    curl -v http://{REMOTE-IP}/demo.txt -O demo.txt
+    curl -v -O http://{REMOTE-IP}/demo.txt
 
 **Utilize the -k flag to download file over HTTPS with certificate validation disabled**
     
