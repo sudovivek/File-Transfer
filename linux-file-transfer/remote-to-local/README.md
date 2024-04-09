@@ -101,7 +101,7 @@ SOCAT -
 
 **Run client on local PC**
     
-    socat TCP4:10.10.10.10:443 file:demo.txt,create
+    socat TCP4:{REMOTE-IP}:443 file:demo.txt,create
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
