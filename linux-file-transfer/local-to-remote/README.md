@@ -1,17 +1,26 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**Download file from local to remote**
+**Run this command to start http server**
+
+	python -m http.server 80
+
+**run python server on local pc and run this command on remote pc**
     
     wget http://10.10.10.10/demo.txt
 
-**Download file and save to local location**
+**-O to rename save file to another location**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
 
 **Download file over HTTPS with certificate validation disabled**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
+
+**run python server on remote pc and run this command on local pc to put file**
+
+    wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
+
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
