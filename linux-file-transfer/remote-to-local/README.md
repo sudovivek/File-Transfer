@@ -133,28 +133,28 @@ USING SSH -
 
 **SCP-**
 
-**Copy file from remote to local**
+**Copy a file from Remote PC to Local PC**
     
     scp user@{REMOTE-IP}:/tmp/demo.txt /tmp/
 
-**Copy file from remote to local**
+**Copy a directory from Remote PC to Local PC**
 
     scp -r user@{REMOTE-IP}:/tmp/demo/ /tmp/
     
-**Copy directory from remote to local**
+**Copy a directory from Remote to Local with RSA key**
 
     scp -i id_rsa -r user@{REMOTE-IP}:/tmp/demo/ /tmp/
     
 **RSYNC-**
 
-**Download web content to local directory**
+**Copy a file from Remote PC to Local PC**
     
     rsync -av user@{REMOTE-IP}:/tmp/demo.txt /tmp/
 
-**Download web content to local directory**
+**Copy a directory from Remote PC to Local PC**
 
     rsync -r user@{REMOTE-IP}:/tmp/demo/ /tmp/
     
-**Download web content to local directory**
+**Copy a directory from Remote to Local with RSA key**
 
     rsync -av --port 22 -e 'ssh -i id_rsa' -r user@{REMOTE-IP}:/tmp/demo/ /tmp/
