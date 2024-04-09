@@ -39,13 +39,13 @@ USING WGET -
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC**
-
-    wget -O- --method=PUT --body-file=demo.txt http://{REMOTE-IP}/demo.txt
-
 **Use the -i flag to fetch URLs from a file, where each URL is listed on a separate line**
 
     wget -i urls.txt
+    
+**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
+
+    wget -O- --method=PUT --body-file=demo.txt http://{REMOTE-IP}/demo.txt
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ USING CURL -
     
     curl -v https://{LOCAL-IP}/demo.txt -O demo.txt -k
 
-**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC**
+**Execute this command on the Local PC, while the HTTP Server is running on the Remote PC, it uses PUT method so run http server which supports PUT method, Here is my script for http server that supports PUT method -** https://github.com/sudovivek/Portable-Servers/blob/main/HTTP_Server/http-server.py
 
     curl -v -X PUT --upload-file demo.txt http://{REMOTE-IP}           
 ------------------------------------------------------------------------------------------------------------------
