@@ -23,11 +23,7 @@ Commands to start HTTP Server -
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**To initiate the HTTP server, execute the following command**
-
-    python -m http.server 80
-
-**On the Lcoal PC, run the following command after launching a python server on Remote PC**
+**On the Lcoal PC, run the following command after launching a HTTP Server on Remote PC**
     
     wget http://{REMOTE-IP}/demo.txt
 
@@ -44,7 +40,7 @@ USING WGET -
     
     wget http://{REMOTE-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Execute this command on the Remote PC, while the python server is running on the Local PC**
+**Execute this command on the Remote PC, while the HHTP Server is running on the Local PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://{LOCAL-IP}/demo.txt
 
