@@ -55,17 +55,25 @@ USING WGET -
 USING CURL -
 ------------------------------------------------------------------------------------------------------------------
 
-**Download file and display output**
+**On the Local PC, run the following command after launching a HTTP Server on Remote PC**
     
-    curl -v http://10.10.10.10/demo.txt
+    curl -v http://{REMOTE-IP}/demo.txt
 
-**Output save to file**
+**Utilize the -o flag, to save the output to a file and specify a location**
     
-    curl -v http://10.10.10.10/demo.txt -o demo.txt
+    curl -v http://{REMOTE-IP}/demo.txt -o demo.txt
 
-**Download file over HTTPS with certificate validation disabled**
+**Utilize the -O flag to Write output to a file named as the remote file**
+
+    curl -v http://{REMOTE-IP}/demo.txt -O demo.txt
+
+**Utilize the -k flag to download file over HTTPS with certificate validation disabled**
     
-    curl -v https://10.10.10.10/demo.txt -o demo.txt -k
+    curl -v https://{REMOTE-IP}/demo.txt -O demo.txt -k
+
+**Execute this command on the Remote PC, while the HTTP Server is running on the Local PC**
+
+    curl -v -X PUT --upload-file demo.txt http://{Local-IP}           
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
