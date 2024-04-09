@@ -1,23 +1,23 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-To initiate the HTTP server, execute the following command.
+**To initiate the HTTP server, execute the following command**
 
     python -m http.server 80
 
-On the lcoal PC, run the following command after launching a Python server on Remote PC.
+**On the lcoal PC, run the following command after launching a Python server on Remote PC**
     
     wget http://10.10.10.10/demo.txt
 
-Utilize the -O flag to specify a different destination for the downloaded file.
+**Utilize the -O flag to specify a different destination for the downloaded file**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
 
-For downloading files over HTTPS with certificate validation disabled, use the following command.
+**For downloading files over HTTPS with certificate validation disabled, use the following command**
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-Transfer a file from the remote PC to the local PC, while the Python server is running on the local PC.
+**Transfer a file from the remote PC to the local PC, while the Python server is running on the local PC**
 
     wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
 
@@ -94,28 +94,28 @@ USING SSH -
 
 **SCP-**
 
-Copy file from remote to local.
+**Copy file from remote to local**
     
     scp /tmp/demo.txt user@10.10.10.10:/tmp/
 
-Copy file from remote to local.
+**Copy file from remote to local**
 
     scp demo.txt root@10.10.10.10:/root/
 
-Copy directory from remote to local.
+**Copy directory from remote to local**
 
     scp -r /tmp/demo/ user@10.10.10.10:/tmp/
 
 **RSYNC-**
 
-Download web content to local directory.
+**Download web content to local directory**
     
     rsync -av /tmp/demo/ root@10.10.10.10:/root/*
 
-Download web content to local directory.
+**Download web content to local directory**
 
     rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 
-Download web content to local directory.
+**Download web content to local directory**
 
     rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
