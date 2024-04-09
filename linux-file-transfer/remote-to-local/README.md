@@ -1,7 +1,7 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**To initiate the HTTP server, execute the following command**
+To initiate the HTTP server, execute the following command
 
     python -m http.server 80
 
@@ -9,7 +9,7 @@ USING WGET -
     
     wget http://10.10.10.10/demo.txt
 
-**Utilize the -O flag to specify a different destination for the downloaded file**
+Utilize the -O flag to specify a different destination for the downloaded file
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
 
