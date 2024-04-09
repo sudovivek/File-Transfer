@@ -1,23 +1,23 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-To initiate the HTTP server, execute the following command
+To initiate the HTTP server, execute the following command.
 
     python -m http.server 80
 
-**On the lcoal PC, run the following command after launching a Python server on Remote PC**
+On the lcoal PC, run the following command after launching a Python server on Remote PC.
     
     wget http://10.10.10.10/demo.txt
 
-Utilize the -O flag to specify a different destination for the downloaded file
+Utilize the -O flag to specify a different destination for the downloaded file.
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt
 
-**For downloading files over HTTPS with certificate validation disabled, use the following command**
+For downloading files over HTTPS with certificate validation disabled, use the following command.
     
     wget http://10.10.10.10/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**Transfer a file from the remote PC to the local PC, while the Python server is running on the local PC**
+Transfer a file from the remote PC to the local PC, while the Python server is running on the local PC.
 
     wget -O- --method=PUT --body-file=demo.txt http://10.10.10.10/demo.txt
 
