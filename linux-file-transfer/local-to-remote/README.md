@@ -82,11 +82,11 @@ NC / Ncat -
 
 **Run listener on remote PC**
     
-    nc64.exe -nlvp 443 > demo.txt
+    nc -nlvp 443 > demo.txt
 
 **Run client on local PC**
     
-    nc -v 10.10.10.10 443 < demo.txt
+    nc -v {REMOTE-IP} 443 < demo.txt
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
