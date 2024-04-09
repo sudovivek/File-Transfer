@@ -109,13 +109,13 @@ SOCAT -
 PHP -
 ------------------------------------------------------------------------------------------------------------------
 
-**Run HTTP server on local PC**
+**Run HTTP server on Remote PC**
     
     python -m http.server 80
 
     php -S 0.0.0.0:80
 
-**Run PHP script on remote PC**
+**Run PHP script on Local PC**
 
 Download file.
 
