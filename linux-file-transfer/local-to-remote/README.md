@@ -1,7 +1,7 @@
 USING WGET -
 ------------------------------------------------------------------------------------------------------------------
 
-**To initiate the HTTP server, execute the following command:**
+**To initiate the HTTP server, execute the following command**
 
     python -m http.server 80
 
