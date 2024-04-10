@@ -136,31 +136,32 @@ USING SSH -
 
 **SCP-**
 
-**Copy a file from Remote PC to Local PC**
+**Copy a file from Local PC to Remote PC**
     
-    scp user@{REMOTE-IP}:/users/public/demo.txt /tmp/
+    scp /tmp/demo.txt user@{REMOTE-IP}:/users/public/
 
-**Copy a directory from Remote PC to Local PC**
+**Copy a directory from Local PC to Remote PC**
 
-    scp -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    scp -r /tmp/demo/ user@{REMOTE-IP}:/users/public/
     
-**Copy a directory from Remote to Local with RSA key**
+**Copy a directory from Local to Remote with RSA key**
 
-    scp -i id_rsa -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
-    
+    scp -i id_rsa -r /tmp/demo/ user@{REMOTE-IP}:/users/public/
+
 **RSYNC-**
 
-**Copy a file from Remote PC to Local PC**
+**Copy a file from Local PC to Remote PC**
     
-    rsync -av user@{REMOTE-IP}:/users/public/demo.txt /tmp/
+    rsync -av /tmp/demo.txt user@{REMOTE-IP}:/users/public/
 
-**Copy a directory from Remote PC to Local PC**
+**Copy a directory from Local PC to Remote PC**
 
-    rsync -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
-    
-**Copy a directory from Remote to Local with RSA key**
+    rsync -r /tmp/demo/ user@{REMOTE-IP}:/users/public/
 
-    rsync -av --port 22 -e 'ssh -i id_rsa' -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+**Copy a directory from Local to Remote with RSA key**
+
+    rsync -av --port 22 -e 'ssh -i id_rsa' -r /tmp/demo/ user@{REMOTE-IP}:/users/public/
+------------------------------------------------------------------------------------------------------------------
 
 </br>
 
