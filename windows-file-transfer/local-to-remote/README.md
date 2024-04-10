@@ -115,18 +115,18 @@ USING SMB -
 
 **Use authenticated servers if file transfer is long**
 
-    impacket-smbserver share -username user -password 123 . -smb2support
+    impacket-smbserver share -username user -password pass . -smb2support
 
 
 **SMB CLIENT -**
 
 **To create authenticated session**
     
-    net use \\{LOCAL-IP} /u:"user" "123"
+    net use \\{LOCAL-IP} /u:"user" "pass"
 
 **Web Content Download**
     
-    copy \\{LOCAL-IP}\share\demo.txt c:\temp\demo.txt  
+    copy \\{LOCAL-IP}\share\demo.txt \users\public\demo.txt  
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
