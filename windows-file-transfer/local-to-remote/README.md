@@ -186,7 +186,7 @@ USING BITSADMIN -
     
     powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo1.txt', 'http://{LOCAL-IP}/demo2.txt' -Destination 'c:\users\public\demo1.txt', 'c:\users\public\demo2.txt' -TransferType Download"
 
-**Download a multiple files from Local PC to Remote PC using wildcard**
+**Transfer multiple files from one directory to another directory**
     
     powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source '\users\public\*.txt' -Destination '\users\public\' -TransferType Download"
 ------------------------------------------------------------------------------------------------------------------
