@@ -196,13 +196,13 @@ USING BITSADMIN -
 USING NC / NETCAT - 
 ------------------------------------------------------------------------------------------------------------------
 
-**First, start listener on client with output redirection to file**
+**Run NC Server on local PC**
     
-    nc.exe -nlvp 443 > demo.txt
+    nc.exe -nlvp 443 < demo.txt
 
-**Then start server with input redirection from file**
+**Run NC CLient on remote PC**
     
-    nc.exe -v 10.10.10.10 443 < demo.txt
+    nc.exe -v {LOCAL-IP} 443 > demo.txt
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
