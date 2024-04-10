@@ -136,28 +136,32 @@ USING SSH -
 
 **SCP-**
 
-**Web Content Download**
+**Copy a file from Remote PC to Local PC**
     
-    scp /tmp/demo.txt user@10.10.10.10:/tmp/
+    scp user@{REMOTE-IP}:/users/public/demo.txt /tmp/
 
-**Web Content Download**
+**Copy a directory from Remote PC to Local PC**
 
-    scp demo.txt root@10.10.10.10:/root/
+    scp -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
+**Copy a directory from Remote to Local with RSA key**
 
+    scp -i id_rsa -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
 **RSYNC-**
 
-**Web Content Download**
+**Copy a file from Remote PC to Local PC**
     
-    rsync -av /tmp/demo/ root@192.168.1.120:/root/*
+    rsync -av user@{REMOTE-IP}:/users/public/demo.txt /tmp/
 
-**Web Content Download**
+**Copy a directory from Remote PC to Local PC**
 
-    rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
+    rsync -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
+**Copy a directory from Remote to Local with RSA key**
 
-**Web Content Download**
+    rsync -av --port 22 -e 'ssh -i id_rsa' -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
 
-    rsync -av --port 22 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
-------------------------------------------------------------------------------------------------------------------
 
 </br>
 
