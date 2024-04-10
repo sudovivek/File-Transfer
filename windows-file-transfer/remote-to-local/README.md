@@ -68,35 +68,32 @@ USING SSH -
 
 **SCP-**
 
-**Web Content Upload**
+**Copy a file from Remote PC to Local PC**
     
-    scp user@10.10.10.10:/tmp/demo.txt /tmp/
+    scp user@{REMOTE-IP}:/users/public/demo.txt /tmp/
 
-**Wildcard**
+**Copy a directory from Remote PC to Local PC**
 
-    scp -vr root@10.10.10.10:/root/*.zip /tmp/demo/ 
+    scp -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
+**Copy a directory from Remote to Local with RSA key**
 
-**Custom Port**
-
-    scp P 2222 -vr root@10.10.10.10:/root/*.zip /tmp/demo/ 
-
-**SSH Key**
-
-    scp -i /home/user/.ssh/id_rsa -vr root@10.10.10.10: /tmp/demo/ 
-
+    scp -i id_rsa -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
 **RSYNC-**
 
-**Web Content Upload**
+**Copy a file from Remote PC to Local PC**
     
-    rsync -av root@10.10.10.10:/root/* /tmp/demo/
+    rsync -av user@{REMOTE-IP}:/users/public/demo.txt /tmp/
 
-**Custom Port**
+**Copy a directory from Remote PC to Local PC**
 
-    rsync -av --port 2222 -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
+    rsync -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
+    
+**Copy a directory from Remote to Local with RSA key**
 
-**SSH Key**
+    rsync -av --port 22 -e 'ssh -i id_rsa' -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
 
-    rsync -av -e 'ssh -i /home/user/id_rsa' root@10.10.10.10:/root/* /tmp/demo/
 ------------------------------------------------------------------------------------------------------------------
 
 </br>
