@@ -162,7 +162,6 @@ USING SSH -
 
     rsync -av --port 22 -e 'ssh -i id_rsa' -r user@{REMOTE-IP}:/users/public/demo/ /tmp/
 
-
 </br>
 
 USING WinRM - 
