@@ -199,6 +199,8 @@ USING NC / NETCAT -
 **Run NC Server on local PC**
     
     nc.exe -nlvp 443 < demo.txt
+                OR
+    cat demo.txt | nc -nlvp 443
 
 **Run NC CLient on remote PC**
     
