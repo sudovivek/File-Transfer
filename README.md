@@ -37,3 +37,12 @@ Each method includes detailed commands and examples for both downloading and upl
 ## Note
 
 Ensure that you have the necessary permissions and access rights before attempting file transfers, especially when using authentication methods like SMB, SSH, or FTP.
+
+Author
+
+    Author: SUDOVIVEK
+    GitHub: @sudovivek
+
+Issues and Feedback
+
+If you encounter any issues or have suggestions for improvement, please open an issue on GitHub.
