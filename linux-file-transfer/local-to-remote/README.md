@@ -29,11 +29,11 @@ USING WGET -
     
     wget http://{LOCAL-IP}/demo.txt
 
-**2. Utilize the -O flag to specify a different destination for the downloaded file**
+**2. Utilize the `-O` flag to specify a different destination for the downloaded file**
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
-**3. Utilize the -b flag to execute the process in the background**
+**3. Utilize the `-b` flag to execute the process in the background**
     
     wget -b http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt
 
@@ -41,7 +41,7 @@ USING WGET -
     
     wget http://{LOCAL-IP}/demo.txt -O /tmp/demo.txt --no-check-certificate
 
-**5. Use the -i flag to fetch URLs from a file, where each URL is listed on a separate line**
+**5. Use the `-i` flag to fetch URLs from a file, where each URL is listed on a separate line**
 
     wget -i urls.txt
     
@@ -60,15 +60,15 @@ USING CURL -
     
     curl -v http://{LOCAL-IP}/demo.txt
 
-**2. Utilize the -o flag, to save the output to a file and specify a location**
+**2. Utilize the `-o` flag, to save the output to a file and specify a location**
     
     curl -v http://{LOCAL-IP}/demo.txt -o demo.txt
 
-**3. Utilize the -O flag to Write output to a file named as the remote file**
+**3. Utilize the `-O` flag to Write output to a file named as the remote file**
 
     curl -v -O http://{LOCAL-IP}/demo.txt
 
-**4. Utilize the -k flag to download file over HTTPS with certificate validation disabled**
+**4. Utilize the `-k` flag to download file over HTTPS with certificate validation disabled**
     
     curl -v https://{LOCAL-IP}/demo.txt -O demo.txt -k
 
