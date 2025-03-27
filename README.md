@@ -41,7 +41,7 @@ Ensure that you have the necessary permissions and access rights before attempti
 
 ### Author
 
-- Author: SUDOVIVEK
+- Author: Vivek Choudhary
 - GitHub: [@sudovivek](https://github.com/sudovivek)
 
 ### Issues and Feedback
